@@ -2,15 +2,15 @@
 {
     "layer": "top", 
     "position": "bottom", 
-    "height": 30, 
     "spacing": 4,
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "modules-left": [],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": [
         "pulseaudio",
         "cpu",
-        "memory"
+	"memory",
+	"clock"
     ],
      "hyprland/workspaces": {
          "disable-scroll": true,
@@ -23,20 +23,29 @@
              "default": ""
          }
      },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
     "clock": {
-	"format": "{:%a %d %b - %I:%M %p}",
+	// Check this link to add locale
+	// https://wiki.archlinux.org/title/Locale#LC_TIME:_date_and_time_format
+	"locale": "es_CO.UTF-8",
 	"timezone": "America/Bogota",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	"format": "{:L%I:%M %p %A %d %B}",
+	"tooltip": true,
+        "tooltip-format": "<tt>{calendar}</tt>",
+	"calendar": {
+		"mode": "month",
+		"format": {
+			"months":     "<span color='#ffead3'><b>{}</b></span>",
+			"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+		}
+	},
+	"actions": {
+		"on-click": "shift_down",
+		"on-click-middle": "shift_reset",
+		"on-click-right": "shift_up"
+	}
     },
     "cpu": {
         "format": "{usage}% ",
@@ -47,21 +56,11 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{volume}% {icon}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
+        "format-icons": { "default": ["", "", ""] },
         "on-click": "pavucontrol"
     },
     "custom/power": {
