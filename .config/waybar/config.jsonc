@@ -1,78 +1,52 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", 
-    "position": "bottom", 
-    "spacing": 4,
-    "reload_style_on_change": true,
-    "modules-left": [],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": [
-        "pulseaudio",
-        "cpu",
-	"memory",
-	"clock"
-    ],
-     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": false,
-         "warp-on-scroll": false,
-         "format": "{name}: {icon}",
-         "format-icons": {
-             "urgent": "",
-             "active": "",
-             "default": ""
-         }
-     },
-    "clock": {
-	// Check this link to add locale
-	// https://wiki.archlinux.org/title/Locale#LC_TIME:_date_and_time_format
-	"locale": "es_CO.UTF-8",
-	"timezone": "America/Bogota",
-	"format": "{:L%I:%M %p %A %d %B}",
-	"tooltip": true,
-        "tooltip-format": "<tt>{calendar}</tt>",
-	"calendar": {
-		"mode": "month",
-		"format": {
-			"months":     "<span color='#ffead3'><b>{}</b></span>",
-			"days":       "<span color='#ecc6d9'><b>{}</b></span>",
-			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-		}
-	},
-	"actions": {
-		"on-click": "shift_down",
-		"on-click-middle": "shift_reset",
-		"on-click-right": "shift_up"
-	}
+  "layer": "top",
+  "position": "bottom",
+  "spacing": 4,
+  "reload_style_on_change": true,
+  "modules-left": [],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["cpu", "memory", "clock"],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "",
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+  },
+  "clock": {
+    // Check this link to add locale
+    // https://wiki.archlinux.org/title/Locale#LC_TIME:_date_and_time_format
+    "locale": "es_CO.UTF-8",
+    "timezone": "America/Bogota",
+    "format": "{:L%I:%M %p %A %d %B}",
+    "tooltip": true,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
     },
-    "memory": {
-        "format": "{}% "
+    "actions": {
+      "on-click": "shift_down",
+      "on-click-middle": "shift_reset",
+      "on-click-right": "shift_up",
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": { "default": ["", "", ""] },
-        "on-click": "pavucontrol"
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
-    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false,
+  },
+  "memory": {
+    "format": "{}% ",
+  },
 }
