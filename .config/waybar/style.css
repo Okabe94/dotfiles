@@ -1,4 +1,4 @@
-@import "../theme/waybar.css";
+@import "waybar.css";
 
 * {
   background-color: @background;
@@ -6,7 +6,7 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 13px;
 }
 
