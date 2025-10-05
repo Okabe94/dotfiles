@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-"reload_style_on_change": true,
+  "reload_style_on_change": true,
   "layer": "top",
   "position": "bottom",
   "spacing": 0,
@@ -36,7 +36,7 @@
   },
   "clock": {
     "timezone": "America/Bogota",
-    "format": "{:L%a %d %b %t %I:%M %p}",
+    "format": "{:L%a %d %b %H:%M}",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
@@ -59,8 +59,8 @@
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
     "format-wifi": "{icon}",
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮",
+    "format-ethernet": "\udb80\udc02",
+    "format-disconnected": "\uf2bd",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
@@ -69,7 +69,6 @@
     "on-click": "omarchy-launch-wifi"
   },
   "pulseaudio": {
-    "icon-size": 40,
     "format": "{icon}",
     "on-click": "kitty --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",

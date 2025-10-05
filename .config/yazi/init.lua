@@ -1,2 +1,1 @@
-require("full-border"):setup()
-
+-- require('nvim-highlight-colors').setup({})
