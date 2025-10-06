@@ -1,0 +1,53 @@
+**Repos**
+  git
+  yay
+  stow
+
+**Terminal**
+  btop
+  snapper
+  fastfetch
+  yazi
+  fzf
+  lsa
+  zoxide
+
+**Utils**
+  swaync
+  waybar
+  wofi
+  hyprpaper
+  hyprlock
+  hyprsunset
+  hyprshot
+  hypridle
+  nvim
+  lazyvim
+  lazygit
+  wirex
+
+**Apps**
+  thunar
+  bitwarden-desktop
+  zen-browser
+  steam
+  android studio
+  vesktop
+  virt-manager
+  
+
+
+**Possible**
+  starship
+
+
+
+// Workflow
+* installed CO lang to display day in clock for waybar
+* Installed adwaita-fonts
+* Installed noto-fonts
+* Installed standard symbols PS
+* Installed nerd-fonts
+* Installed awesome-fonts
+* Reverted LANG to US
+
