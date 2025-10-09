@@ -1,37 +1,89 @@
-@import "waybar.css";
+@import "styles/modules-left.css";
+@import "styles/modules-center.css";
+@import "styles/modules-right.css";
+@import "theme.css";
 
 * {
-  background-color: @background;
-  color: @foreground;
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: "Roboto";
-  font-size: 13px;
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 16px;
+  color: @main-fg;
 }
 
-.modules-left {
-  margin-left: 8px;
+/* main outline */
+
+window#waybar {
+  background-color: @outline;
 }
 
-.modules-right {
-  margin-right: 8px;
+/* main background */
+
+window#waybar > box {
+  margin: 4px;
+  background-color: @main-bg;
 }
 
-#cpu,
-#network,
-#pulseaudio {
-  min-width: 14px;
-  margin: 0 7.5px;
+/* hoverables */
+
+#custom-system_update:hover,
+#cpu:hover,
+#mpris:hover,
+#pulseaudio:hover,
+#wireplumber:hover {
+  color: @hover-fg;
 }
+
+/* states */
+
+.deactivated,
+.paused,
+#pulseaudio.output.muted,
+#pulseaudio.input.source-muted,
+#wireplumber.muted {
+  color: @hover-fg;
+}
+.warning {
+  color: @warning;
+}
+.critical {
+  color: @critical;
+}
+.charging {
+  color: @charging;
+}
+
+/* dividers */
+
+#custom-left_div,
+#custom-left_inv,
+#custom-right_div,
+#custom-right_inv {
+  font-size: 23.1px;
+}
+
+/* buttons */
+
+button {
+  border-radius: 16px;
+  padding: 0 10px;
+}
+button:hover {
+  background-color: @hover-bg;
+  color: @hover-fg;
+}
+
+/* tooltips */
 
 tooltip {
-  padding: 2px;
+  border: 2px solid @main-br;
+  border-radius: 10px;
+  background-color: @main-bg;
 }
-
-#clock {
+tooltip label {
+  margin: 2px 4px;
+  font-weight: normal;
 }
-
-.hidden {
-  opacity: 0;
+tooltip decoration {
+  border: none;
+  background-color: transparent;
 }
