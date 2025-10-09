@@ -6,9 +6,6 @@
 # Created: August 19, 2025
 # License: MIT
 
-# shellcheck disable=SC1091
-source "$HOME/.config/waybar/scripts/theme-switcher.sh" fzf
-
 LIST=(
   'Shutdown'
   'Reboot'

@@ -27,6 +27,7 @@
   wirex
 
 **Apps**
+  heroic-launcher
   thunar
   bitwarden-desktop
   zen-browser

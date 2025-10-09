@@ -214,7 +214,7 @@
 
   "custom/power_menu": {
     "format": "󰤄",
-    "on-click": "kitty -e ~/.config/waybar/scripts/power-menu.sh",
+    "on-click": "kitty --class=Power -e ~/.config/waybar/scripts/power-menu.sh",
     "tooltip-format": "Power Menu",
   },
 
