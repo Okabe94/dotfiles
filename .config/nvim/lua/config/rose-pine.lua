@@ -1,6 +1,6 @@
 require("rose-pine").setup({
   inherit = false,
-  variant = "main",      -- auto, main, moon, or dawn
+  variant = "main", -- auto, main, moon, or dawn
   dark_variant = "main", -- main, moon, or dawn
   dim_inactive_windows = false,
   extend_background_behind_borders = true,
@@ -8,7 +8,7 @@ require("rose-pine").setup({
   enable = {
     terminal = true,
     legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-    migrations = true,        -- Handle deprecated options automatically
+    migrations = true, -- Handle deprecated options automatically
   },
 
   styles = {
@@ -60,7 +60,7 @@ require("rose-pine").setup({
     -- Comment = { fg = "foam" },
     StatusLine = { fg = "love", bg = "love", blend = 15 },
     VertSplit = { fg = "muted", bg = "muted" },
-    Visual = { fg = "base", bg = "text", inherit = false },
+    Visual = { fg = "base", bg = "love", inherit = false },
   },
 
   before_highlight = function(group, highlight, palette)

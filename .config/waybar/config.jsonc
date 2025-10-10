@@ -7,6 +7,7 @@
   ],
   "modules-center": [
     "custom/left_div#2",
+    "idle_inhibitor",
     "custom/left_div#3",
     "memory",
     "custom/left_div#4",
@@ -108,14 +109,14 @@
     "format": "󰍛 {usage}%",
     "format-warning": "󰀨 {usage}%",
     "format-critical": "󰀨 {usage}%",
-    "min-length": 7,
-    "max-length": 7,
+    "min-length": 6,
+    "max-length": 6,
     "states": {
       "warning": 75,
       "critical": 90,
     },
     "tooltip": false,
-    "on-click": "kitty -e htop",
+    "on-click": "kitty -e btop",
   },
 
   "custom/distro": {
@@ -210,6 +211,19 @@
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh input raise",
     "on-scroll-down": "~/.config/waybar/scripts/volume.sh input lower",
     "tooltip-format": "Input Device: {desc}",
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰈈",
+      "deactivated": "󰈉",
+    },
+    "min-length": 3,
+    "max-length": 3,
+    "tooltip-format-activated": "Keep Screen On: <span text_transform='capitalize'>{status}</span>",
+    "tooltip-format-deactivated": "Keep Screen On: <span text_transform='capitalize'>{status}</span>",
+    "start-activated": false,
   },
 
   "custom/power_menu": {
