@@ -39,7 +39,7 @@ APPS=(
   zen-browser-bin
   steam
   android studio
-  vesktop
+  vesktop-bin
   virt-manager
 )
 
@@ -54,5 +54,8 @@ rm .bashrc
 rm -rf .config/hypr/
 
 echo "Stowing configuration..."
-cd dotfiles || exit
+cd dotfiles/ || exit
 stow .
+hyprctl reload
+
+echo "Install has finish. Please reboot!!!"
