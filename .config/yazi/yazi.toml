@@ -47,9 +47,17 @@ reveal = [
 	{ run = 'termux-open "$(dirname "$1")"',        desc = "Reveal", for = "android" },
 	{ run = '''clear; exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
+unrar = [
+	{ run = 'unrar x "$@"', desc = "Uncompress Here", for = "unix" },
+]
+un7 = [
+	{ run = '7z x "$@"', desc = "Uncompress Here", for = "unix" },
+]
+unzip = [
+	{ run = 'unzip "$@"', desc = "Uncompress Here", for = "unix" },
+]
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
-	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
 ]
 play = [
 	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
@@ -67,8 +75,14 @@ rules = [
 	{ mime = "image/*", use = [ "open", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	# Zip
+	{ mime = "application/{zip}", use = [ "unzip", "reveal" ] },
+	# Rar
+	{ mime = "application/{rar}", use = [ "unrar", "reveal" ] },
+	# 7z
+	{ mime = "application/{7z*}", use = [ "un7", "reveal" ] },
 	# Archive
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	{ mime = "application/{tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
@@ -90,6 +104,8 @@ suppress_preload = false
 fetchers = [
 	# Mimetype
 	{ id = "mime", name = "*", run = "mime", prio = "high" },
+  { id = "mime", url = "local://*",  run = "mime.local", prio = "high" },
+	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
 ]
 spotters = [
 	{ name = "*/", run = "folder" },
@@ -194,7 +210,7 @@ trash_title 	= "Trash {n} selected file{s}?"
 trash_origin	= "center"
 trash_offset	= [ 0, 0, 70, 20 ]
 
-# delete
+#
 delete_title 	= "Permanently delete {n} selected file{s}?"
 delete_origin	= "center"
 delete_offset	= [ 0, 0, 70, 20 ]

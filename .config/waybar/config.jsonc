@@ -3,7 +3,6 @@
     "custom/left_div#1",
     "hyprland/workspaces",
     "custom/right_div#1",
-    "hyprland/window",
   ],
   "modules-center": [
     "custom/left_div#2",
@@ -77,15 +76,6 @@
     "on-scroll-down": "hyprctl dispatch workspace -1",
     "cursor": true,
   },
-  "hyprland/window": {
-    "format": "{title}",
-    "rewrite": {
-      "(.*)Zen Browser": "Browser",
-      "~": "Desktop",
-    },
-    "swap-icon-label": false,
-  },
-
   /*--------------------
 		modules-center
 	--------------------*/

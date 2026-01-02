@@ -32,15 +32,19 @@ APPS=(
   nvim
   lazyvim
   lazygit
-  wirex
-  heroic-launcher
+  wiremix
+  heroic-games-launcher-bin
   thunar
-  bitwarden-desktop
+  bitwarden
   zen-browser-bin
   steam
-  android studio
+  android-studio
   vesktop-bin
   virt-manager
+  clonehero
+  unrar
+  p7zip
+  mpv
 )
 
 echo "Installing applications..."
@@ -54,7 +58,7 @@ rm .bashrc
 rm -rf .config/hypr/
 
 echo "Stowing configuration..."
-cd dotfiles/ || exit
+cd /home/okabe94/dotfiles/ || exit
 stow .
 hyprctl reload
 
