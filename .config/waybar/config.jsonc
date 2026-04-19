@@ -20,7 +20,7 @@
     "custom/right_div#3",
     "clock#date",
     "custom/right_div#4",
-    "network",
+    "custom/ollama",
     "custom/right_div#5",
   ],
   "modules-right": [
@@ -38,25 +38,11 @@
 	-------------*/
 
   "layer": "top",
-  // "output":
-  // "position":
   "height": 0,
   "width": 0,
   "margin": 0,
-  // "margin-top":
-  // "margin-left":
-  // "margin-bottom":
-  // "margin-right":
   "spacing": 0,
-  // "name":
   "mode": "dock",
-  // "start_hidden":
-  // "modifier-reset":
-  // "exclusive":
-  // "fixed-center":
-  // "passthrough":
-  // "ipc":
-  // "id":
   "reload_style_on_change": true,
 
   /*-------------------------------------------------------------------
@@ -140,6 +126,19 @@
     },
   },
 
+  "custom/ollama": {
+    "exec": "/home/okabe94/dotfiles/waybar-ai.sh",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "/home/okabe94/dotfiles/ai-toggle.sh",
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰚩", // Nerd Font Microchip icon
+      "inactive": "󱚢 󰒲", // Nerd Font Sleep icon
+    },
+  },
+
   "network": {
     "interval": 2,
     "format-ethernet": "󰈀",
@@ -173,6 +172,7 @@
       "transition-left-to-right": false,
     },
   },
+
   "pulseaudio#output": {
     "format": "{icon} {volume}%",
     "format-muted": "{icon} {volume}%",
@@ -191,6 +191,7 @@
     "on-scroll-down": "~/.config/waybar/scripts/volume.sh output lower",
     "tooltip-format": "Output Device: {desc}",
   },
+
   "pulseaudio#input": {
     "format": "{format_source}",
     "format-source": "󰍬 {volume}%",

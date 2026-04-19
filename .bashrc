@@ -14,3 +14,10 @@ export FZF_DEFAULT_OPTS="
 	--color=border:#403d52,header:#31748f,gutter:#191724
 	--color=spinner:#f6c177,info:#9ccfd8
 	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+
+# adb tools
+export PATH=$PATH:$HOME/Android/Sdk/platform-tools
+
+# ai agent
+export OLLAMA_HOST=http://localhost:11434
+export PATH="$HOME/.local/bin:$PATH"

@@ -45,6 +45,7 @@ APPS=(
   unrar
   p7zip
   mpv
+  ollama
 )
 
 echo "Installing applications..."
